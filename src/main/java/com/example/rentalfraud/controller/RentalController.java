@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/rentals")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://atulrentalfraudapp.vercel.app")
 public class RentalController {
 
     private final RentalListingRepository repository;
