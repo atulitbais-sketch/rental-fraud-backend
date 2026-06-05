@@ -16,6 +16,7 @@ public class RentalListing {
 
     public int fraudScore;
     public String riskLevel;
+    public String message; // NEW FIELD
 
     // Getters and Setters
 
@@ -97,5 +98,13 @@ public class RentalListing {
 
     public void setRiskLevel(String riskLevel) {
         this.riskLevel = riskLevel;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
