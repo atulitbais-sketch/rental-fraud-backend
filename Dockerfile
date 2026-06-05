@@ -1,8 +1,19 @@
+# Build stage
+FROM eclipse-temurin:21-jdk AS builder
+
+WORKDIR /app
+
+COPY . .
+
+RUN chmod +x mvnw
+RUN ./mvnw clean package -DskipTests
+
+# Runtime stage
 FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-COPY target/smart-rental-fraud-detector-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=builder /app/target/*.jar app.jar
 
 EXPOSE 8080
 
